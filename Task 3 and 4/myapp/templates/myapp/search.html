@@ -1,0 +1,23 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search User</title>
+</head>
+
+<body>
+    <h1>Search user using email address</h1>
+    <div>
+        {% for message in messages %}
+        <h3 style="color: rgb(231, 44, 44);"> {{ message }} </h3>
+        {% endfor %}
+    </div>
+    <form action="{% url 'search' %}" method="POST">
+        {% csrf_token %}
+        <input type="email" placeholder="Email Adress" name="email">
+        <input type="submit" value="Search">
+    </form>
+
+</html>

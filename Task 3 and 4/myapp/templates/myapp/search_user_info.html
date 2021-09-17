@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+
+<body>
+    <h1>The user has been found</h1>
+    <h2>Datails:</h2>
+    {% for info in user %}
+    <ul>
+        <li><b>Username: </b>{{info.username}}</li>
+        <li><b>Full name: </b>{{info.first_name}} {{info.last_name}}</li>
+        <li><b>Email: </b>{{info.email}}</li>
+        <li><b>Phone Number: </b>{{info.phone}}</li>
+        <li><b>Gender: </b>{{info.gender}}</li>
+    </ul>
+    {% endfor %}
+    <button><a href="{% url 'search'%}">search page</a></button>
+    <button><a href="{% url 'home'%}">Home page</a></button>
+</body>
+
+</html>
